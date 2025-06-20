@@ -37,6 +37,60 @@
   href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
+  <style>
+    .equation-box {
+      background-color: #f5f5f5;
+      border-radius: 6px;
+      padding: 20px;
+      margin: 20px 0;
+      font-size: 1.25em;
+      overflow-x: auto;
+      text-align: center;
+    }
+    .phenomenon-box {
+      background-color: #f8f9fa;
+      border: 2px solid #007bff;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px 0 10px 0;
+      box-shadow: 0 4px 6px rgba(0, 123, 255, 0.1);
+    }
+    .phenomenon-title {
+      font-size: 1.3em;
+      font-weight: bold;
+      color: #007bff;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    .phenomenon-text {
+      line-height: 1.5;
+      color: #333;
+      text-align: justify;
+      font-weight: bold;
+    }
+    .author-block a {
+      color: #007bff !important;
+      text-decoration: none;
+    }
+    .author-block a:hover {
+      color: #0056b3 !important;
+      text-decoration: underline;
+    }
+  </style>
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
@@ -48,34 +102,28 @@
 
 
   <section class="hero">
-    <div class="hero-body">
+    <div class="hero-body" style="padding-bottom: 1rem;">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Cat-AIR: Content- & Task-Aware All-in-One Image Restoration</h1>
+            <h1 class="title is-1 publication-title">From Compression to Expansion:<br>
+              A Layerwise Analysis of In-Context Learning</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=MNgI0PUAAAAJ&hl=en" target="_blank">Jiachen Jiang</a><sup>1*</sup>,</span>
+                <a href="https://kongwanbianjinyu.github.io/" target="_blank">Jiachen Jiang</a><sup>*</sup>,</span>
                 <span class="author-block">
-                  <a href="https://www.tianyuding.com/" target="_blank">Tianyu Ding</a><sup>2*†</sup>,</span>
+                  <a href="https://scholar.google.com/citations?user=yFJv-2kAAAAJ&hl=en" target="_blank">Yuxin Dong</a>,</span>
                   <span class="author-block">
-                  <a href="https://bwgzk.github.io/KeZhang.github.io/" target="_blank">Ke Zhang</a><sup>3</sup>,</span>
+                  <a href="https://scholar.google.com/citations?user=XR5CQJcAAAAJ&hl=en" target="_blank">Jinxin Zhou</a>,</span>
+
                   <span class="author-block">
-                  <a href="https://scholar.google.com/citations?user=XR5CQJcAAAAJ&hl=en" target="_blank">Jinxin Zhou</a><sup>1</sup>,</span>
-                  <span class="author-block">
-                  <a href="https://scholar.google.com/citations?user=2BahjdkAAAAJ&hl=en" target="_blank">Tianyi Chen</a><sup>2</sup>,</span>
-                  <span class="author-block">
-                  <a href="https://www.microsoft.com/applied-sciences/people/ilya-zharkov" target="_blank">llya Zharkov</a><sup>2</sup>,</span>
-                  <span class="author-block">
-                  <a href="https://zhihuizhu.github.io/" target="_blank">Zhihui Zhu</a><sup>1</sup>,</span>
-                  <span class="author-block">
-                  <a href="https://sites.google.com/site/lumingliangshomepage/" target="_blank">Luming Liang</a><sup>2†</sup>,</span>
+                  <a href="https://zhihuizhu.github.io/" target="_blank">Zhihui Zhu</a><sup>†</sup>,</span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block"><sup>1</sup>The Ohio State University, <sup>2</sup>Microsoft, <sup>3</sup>Johns Hopkins University<br></span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution, <sup>†</sup>Indicates Corresponding Author</small></span>
+                    <span class="author-block">The Ohio State University<br></span>
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates First Author, <sup>†</sup>Indicates Corresponding Author</small></span>
                   </div>
 
                   <div class="column has-text-centered">
@@ -115,7 +163,7 @@
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/kongwanbianjinyu/Content-Task-All-in-One-Image-Restoration" target="_blank"
+                    <a href="https://github.com/kongwanbianjinyu/Compression_to_Expansion" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -125,7 +173,7 @@
                 </span>
 
                 <!-- Demo link -->
-                <span class="link-block">
+                <!-- <span class="link-block">
                   <a href="https://huggingface.co/spaces/jiachenjiang/Cat-AIR" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -133,10 +181,10 @@
                   </span>
                   <span>Demo 🤗</span>
                   </a>
-                </span>
+                </span> -->
 
                 <!-- Models link -->
-                <span class="link-block">
+                <!-- <span class="link-block">
                   <a href="https://huggingface.co/collections/jiachenjiang/cat-air-6703f63c41373954c1f36aa0" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -144,7 +192,7 @@
                   </span>
                   <span>Models 🤗</span>
                   </a>
-                </span>
+                </span> -->
 
                 
             </div>
@@ -154,6 +202,53 @@
     </div>
   </div>
 </section>
+
+<!-- Phenomenon Highlight Box -->
+<section class="hero is-small">
+  <div class="hero-body" style="padding: 0.5rem 1.5rem;">
+    <div class="container is-fullhd">
+      <div class="columns is-centered">
+        <div class="column is-10">
+          <div class="phenomenon-box">
+            <div class="phenomenon-title">Layerwise Compression-Expansion Phenomenon</div>
+            <div class="phenomenon-text">
+              LLMs exhibiting ICL capabilities organize their layers into two parts with distinct behaviors: a compression part and an expansion part. The early layers, comprising the compression part, progressively produce compact and discriminative representations that capture task information from the input demonstrations. The later layers, forming the expansion part, apply these compact representations to the query to generate the output.
+            </div>
+            <div class="image-container" style="text-align: center; margin-top: 20px;">
+              <img src="static/images/layerwise_accuracy_cdnv.png" alt="Overview Image" style="max-width: 90%; height: auto; border-radius: 8px;">
+            </div>
+            <p class="has-text-centered" style="font-size: 0.85em; margin-top: 12px; color: #666; font-style: normal;">
+              Layer-wise compression to expansion in ICL representations. TDNV first decreases then increases from shallow to deep layers, splitting the model into compression and expansion stages. During the compression stage, task vector accuracy increases as task information is progressively extracted from demonstration pairs. During the expansion stage, early-exit accuracy increases as output information is progressively decoded based on the input query.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TL;DR Section -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <div class="content has-text-centered">
+            <h2 class="title">TL;DR</h2>
+            <p>
+              We uncover a universal <strong>Compression-to-Expansion</strong> 🚀 pattern in ICL representations, revealing how LLMs extract and utilize task information across layers.
+            </p>
+            <p>
+              🔥🔥 More content comming soon: codes, demos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
 <!-- Intro Video -->
 <section class="hero is-small">
@@ -169,311 +264,56 @@
   </div>
 </section>
 
-<!-- Start of Selection -->
-<div class="container">
-  <!-- <h2 class="title has-text-centered">Demonstrations</h2> -->
-  <div class="columns is-multiline">
-    <div class="column is-one-fifth">
-      <h3 class="subtitle has-text-centered">Denoise</h3>
-      <div class="image-comparison-group">
-        <div class="image-comparison">
-          <img class="image-before" src="static/images/noisy_0023.png" alt="Noisy">
-          <img class="image-after" src="static/images/0023.png" alt="Clean">
-          <div class="slider-line"></div>
-          <div class="slider-handle"></div>
-        </div>
-        <div class="image-comparison">
-          <img class="image-before" src="static/images/noisy_0023.png" alt="Noisy">
-          <img class="image-after" src="static/images/mask_0023.png" alt="Mask">
-        </div>
-      </div>
-    </div>
-
-    <div class="column is-one-fifth">
-      <h3 class="subtitle has-text-centered">Derain</h3>
-      <div class="image-comparison-group">
-        <div class="image-comparison">
-          <img class="image-before" src="static/images/rain_070.png" alt="Noisy">
-          <img class="image-after" src="static/images/derain_070.png" alt="Clean">
-          <div class="slider-line"></div>
-          <div class="slider-handle"></div>
-        </div>
-        <div class="image-comparison">
-          <img class="image-before" src="static/images/rain_070.png" alt="Noisy">
-          <img class="image-after" src="static/images/mask_derain_070.png" alt="Mask">
-        </div>
-      </div>
-    </div>
-
-    <div class="column is-one-fifth">
-      <h3 class="subtitle has-text-centered">Dehaze</h3>
-      <div class="image-comparison-group">
-        <div class="image-comparison">
-          <img class="image-before" src="static/images/hazy_0003_0.8_0.2.jpg" alt="Before">
-          <img class="image-after" src="static/images/dehaze_0003_0.8_0.2.png" alt="After">
-          <div class="slider-line"></div>
-          <div class="slider-handle"></div>
-        </div>
-        <div class="image-comparison">
-          <img class="image-before" src="static/images/hazy_0003_0.8_0.2.jpg" alt="Before">
-          <img class="image-after" src="static/images/mask_0003_0.8_0.2.png" alt="Mask">
-        </div>
-      </div>
-    </div>
-
-    <div class="column is-one-fifth">
-      <h3 class="subtitle has-text-centered">Deblur</h3>
-      <div class="image-comparison-group">
-        <div class="image-comparison">
-          <img class="image-before" src="static/images/blur_GOPR0384_11_00_000012.png" alt="Before">
-          <img class="image-after" src="static/images/deblur_GOPR0384_11_00_000012.png" alt="After">
-          <div class="slider-line"></div>
-          <div class="slider-handle"></div>
-        </div>
-        <div class="image-comparison">
-          <img class="image-before" src="static/images/blur_GOPR0384_11_00_000012.png" alt="Before">
-          <img class="image-after" src="static/images/mask_GOPR0384_11_00_000012.png" alt="Mask">
-        </div>
-      </div>
-    </div>
-
-    <div class="column is-one-fifth">
-      <h3 class="subtitle has-text-centered">Light Enhancement</h3>
-      <div class="image-comparison-group">
-        <div class="image-comparison">
-          <img class="image-before" src="static/images/lowlight_780.png" alt="Before">
-          <img class="image-after" src="static/images/delowlight_780.png" alt="After">
-          <div class="slider-line"></div>
-          <div class="slider-handle"></div>
-        </div>
-        <div class="image-comparison">
-          <img class="image-before" src="static/images/lowlight_780.png" alt="Before">
-          <img class="image-after" src="static/images/mask_delowlight_780.png" alt="Mask">
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- End of Selection -->
-
-
-<!-- TL;DR Section -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column is-full-width">
-          <div class="content has-text-centered">
-            <h2 class="title">TL;DR</h2>
-            <p>
-              We present <strong> Cat-AIR </strong> 🚀, an efficient all-in-one image restoration framework that adaptively balances local and global information via alternating spatial-channel attention, using task- and content-aware routing to allocate convolution or self-attention based on region and task complexity.
-            </p>
-            <p>
-              🔥🔥 More content comming soon: codes, demos, models.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- Teaser image -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column is-full-width">
-          <div class="image-container" style="text-align: center;">
-            <img src="static/images/moti.png" alt="Overview Image" style="max-width: 100%; height: auto;">
-          </div>
-          <p class="has-text-centered">
-            Illustration of content and task-aware image restoration. <strong>Left)</strong> Image patches with varying texture complexity and degradation levels. <strong>Right)</strong> We dynamically apply self-attention for complex regions/tasks, while using convolution for simple regions/tasks.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End teaser image -->
-
-<!-- Gradio Demo -->
-<section class="section hero ">
-  <div class="hero-body">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Demo App 🤗</h2>
-        <script type="module"
-	src="https://gradio.s3-us-west-2.amazonaws.com/4.40.0/gradio.js"
-></script>
-
-<gradio-app src="https://jiachenjiang-cat-air.hf.space"></gradio-app>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- Youtube video -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/st3VcdCYe1E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End youtube video -->
-
-
-
-<!-- <div class="image-comparison-group">
-  <div class="image-comparison">
-    <img class="image-before" src="static/images/noisy_0023.png" alt="Noisy">
-    <img class="image-after" src="static/images/0023.png" alt="Clean">
-    <div class="slider-line"></div>
-    <div class="slider-handle"></div>
-  </div>
-
-  <div class="image-comparison">
-    <img class="image-before" src="static/images/noisy_0023.png" alt="Noisy">
-    <img class="image-after" src="static/images/mask_0023.png" alt="Mask">
-  </div>
-</div>
-
-
-<div class="image-comparison-group">
-  <div class="image-comparison">
-    <img class="image-before" src="static/images/rain_070.png" alt="Noisy">
-    <img class="image-after" src="static/images/derain_070.png" alt="Clean">
-    <div class="slider-line"></div>
-    <div class="slider-handle"></div>
-  </div>
-
-  <div class="image-comparison">
-    <img class="image-before" src="static/images/rain_070.png" alt="Noisy">
-    <img class="image-after" src="static/images/mask_derain_070.png" alt="Mask">
-  </div>
-</div> -->
 
 
 
 
-<!-- Teaser video-->
-<!-- <section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%"> -->
-        <!-- Your video here -->
-        <!-- <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section> -->
-<!-- End teaser video -->
+
+
 
 
 
 <!-- Paper abstract -->
-<section class="section hero is-light">
+<!-- <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            All-in-one image restoration seeks to recover high-quality images from various types of degradation using a single model, without prior knowledge of the corruption source. However, existing methods often struggle to effectively and efficiently handle multiple degradation types. We present Cat-AIR, a novel <strong>C</strong>ontent <strong>A</strong>nd <strong>T</strong>ask-aware framework for <strong>A</strong>ll-in-one <strong>I</strong>mage <strong>R</strong>estoration. Cat-AIR incorporates an alternating spatial-channel attention mechanism that adaptively balances the local and global information for different tasks. Specifically, we introduce cross-layer channel attentions and cross-feature spatial attentions that allocate computations based on content and task complexity. Furthermore, we propose a smooth learning strategy that allows for seamless adaptation to new restoration tasks while maintaining performance on existing ones. Extensive experiments demonstrate that Cat-AIR achieves state-of-the-art results across a wide range of restoration tasks, requiring fewer FLOPs than previous methods, establishing new benchmarks for efficient all-in-one image restoration.
+            In-context learning (ICL) enables large language models (LLMs) to adapt to new
+tasks without weight updates by learning from demonstration sequences. While
+ICL shows strong empirical performance, its internal representational mechanisms
+are not yet well understood. In this work, we conduct a statistical geometric analysis of ICL representations to investigate how task-specific information is captured
+across layers. Our analysis reveals an intriguing phenomenon, which we term Layerwise Compression-Expansion: early layers progressively produce compact and
+discriminative representations that encode task information from the input demonstrations, while later layers expand these representations to incorporate the query
+and generate the prediction. This phenomenon is observed consistently across diverse tasks and a range of contemporary LLM architectures. We demonstrate that
+it has important implications for ICL performance—improving with model size
+and the number of demonstrations—and for robustness in the presence of noisy
+examples. To further understand the effect of the compact task representation, we
+propose a bias-variance decomposition and provide a theoretical analysis showing
+how attention mechanisms contribute to reducing both variance and bias, thereby
+enhancing performance as the number of demonstrations increases. Our findings
+reveal an intriguing layerwise dynamic in ICL, highlight how structured representations emerge within LLMs, and showcase that analyzing internal representations
+can facilitate a deeper understanding of model behavior.
           </p>
         </div>
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End paper abstract -->
 
-<!-- FLOPs vs PSNR and Model Architecture -->
+<!-- Tasks  -->
 <section class="section hero is-light">
   <div class="hero-body">
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <div class="columns">
-          <div class="column is-half">
-            <h2 class="title is-3">FLOPs vs PSNR comparison.</h2>
-            <div class="content has-text-centered">
-              <img src="static/images/flops_vs_psnr.png" alt="FLOPs vs PSNR" style="width: 80%; max-width: 480px;">
-              <figcaption>Average performance (PSNR vs. FLOPs) across three degradations (denoising, deraining, dehazing) and five degradations (including deblurring and low-light enhancement). Our methods achieve state-of-the-art results with lower computations.</figcaption>
-            </div>
-          </div>
-          <div class="column is-half">
-            <h2 class="title is-3">Cat-AIR architecture</h2>
-            <div class="content has-text-centered">
-              <img src="static/images/arch.png" alt="Model Architecture" style="width: 100%; max-width: 600px;">
-              <figcaption>Overview of Cat-AIR. Our design features alternating channel and spatial attention mechanisms, where channel attention complexity scales across layers and spatial attention complexity adapts based on features. Prompt modules between decoder blocks are inserted to identify degradations.</figcaption>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Method Section -->
-<section class="section hero is-light" >
-  <div class="hero-body">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Method</h2>
-        <div class="content">
-          <p class="has-text-justified">
-            The core of the method lies in an alternating spatial-channel attention mechanism, which adaptively balances local and global information through cross-layer channel attention and cross-feature spatial attention. These mechanisms dynamically allocate computational resources based on both task and content complexity—using lightweight convolution for simple regions and powerful self-attention for complex ones. </p>
-          <div class="columns">
-            <div class="column is-one-third">
-              <figure class="image">
-                <img src="static/images/channel_attn.png" alt="Channel Attention Mechanism" style="width: 122%; max-width: 800px;">
-                <figcaption>Cross-Layer Channel Attention</figcaption>
-              </figure>
-            </div>
-            <div class="column is-two-thirds">
-              <figure class="image">
-                <img src="static/images/spat.png" alt="Spatial Attention Mechanism">
-                <figcaption>Cross-Feature Spatial attention</figcaption>
-              </figure>
-            </div>
-          </div>
-          <!-- <p class="has-text-justified">
-            Architectural diagrams of (a) cross-layer channel attention and (b) cross-feature spatial attention mechanisms.
-          </p> -->
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- Results Section -->
-<section class="section hero is-light">
-  <div class="hero-body">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-full">
-        <h2 class="title is-3">Results Visualization</h2>
+      <div class="column is-half">
+        <h2 class="title is-3">In-Context Learning Tasks</h2>
         <div class="content">
           <figure class="image">
-            <img src="static/images/ttt.png" alt="Results Image" style="width: 100%;">
-            <figcaption>Visual comparison on five image restoration tasks.</figcaption>
+            <img src="static/images/tasks.png" alt="Tasks Visualization">
+
           </figure>
         </div>
       </div>
@@ -482,25 +322,151 @@
 </section>
 
 
-<!-- Mask Visualization Section -->
-<section class="section hero is-light">
+
+
+
+
+<!-- Method Section -->
+<section class="section hero is-light" >
   <div class="hero-body">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Mask Visualization</h2>
-        <div class="content">
-          <div class="columns">
-            <div class="column is-half">
-              <figure class="image">
-                <img src="static/images/mask-content.png" alt="Content-Awareness Visualization">
-                <figcaption>Content-Awareness</figcaption>
-              </figure>
+        <h2 class="title is-3">TDNV: Metric for Representation Compression</h2>
+        <div class="content has-text-justified">
+          <p>
+            We analyze model representations for in-context learning (ICL). For each task, we use the hidden representation $h_{i,t}^{(l)}$ from each sample $i$ of task $t$ in layer $l$.
+          </p>
+          <p>
+            To measure representation quality, we propose the <b>Task-Distance Normalized Variance (TDNV)</b>. It is the ratio of within-task variance to between-task distance. Lower TDNV means more compressed representations.
+          </p>
+          <div class="equation-box">
+$$\text{TDNV}^{(l)} := \sum_{t=1}^{T} \sum_{\substack{t'=1 \\ t' \neq t}}^{T} \frac{\text{var}_t^{(l)} + \text{var}_{t'}^{(l)}}{2\|\bar{h}_t^{(l)} - \bar{h}_{t'}^{(l)}\|_2^2}$$
+          </div>
+          <p>TDNV has two main components:</p>
+          <ul>
+            <li style="text-align: left; margin-bottom: 1em;">
+              <b>Within-task variance($\text{var}_t^{(l)}$).</b> It measures how tightly examples from the same task cluster. A smaller variance means better compression.
+              <div class="equation-box">
+$$\text{var}_t^{(l)} = \frac{1}{N} \sum_{i=1}^{N} \|h_{i,t}^{(l)} - \bar{h}_t^{(l)}\|_2^2, \quad \text{where} \quad \bar{h}_t^{(l)} = \frac{1}{N} \sum_{i=1}^{N} h_{i,t}^{(l)}.$$
+              </div>
+            </li>
+            <li style="text-align: left;">
+              <b>Between-task distance($\|\bar{h}_t^{(l)} - \bar{h}_{t'}^{(l)}\|_2$).</b> It measures the separation between different tasks. A larger distance means better compression.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Experimental Results Section -->
+<section class="section hero is-light">
+  <div class="hero-body">
+    <div class="container is-fullhd">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+          <h2 class="title is-2">Experimental Results</h2>
+          
+          <!-- Prevalence of Phenomenon Subsection -->
+          <div style="margin-top: 2rem;">
+            <h3 class="title is-4" style="color: #007bff; margin-bottom: 1.5rem;">Prevalence of Phenomenon</h3>
+            
+            <p style="font-size: 1.1em; color: #555; text-align: center; margin-bottom: 1.5rem;">
+              Take Away: The compression-expansion phenomenon is universal across model architectures and emerges naturally during training.
+            </p>
+            
+            <div class="columns is-centered">
+              <div class="column is-5">
+                <div class="content">
+                  <figure class="image">
+                    <img src="static/images/cdnv_models.png" alt="Results Image" style="width: 90%; margin: 0 auto; display: block;">
+                    <figcaption style="margin-top: 10px; font-size: 0.9em; color: #666;">
+                      Layerwise TDNV of different model architectures, including transformer and state space model.
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+              <div class="column is-5">
+                <div class="content">
+                  <figure class="image">
+                    <img src="static/images/amber_checkpoints_tdnv_comparison.png" alt="Additional Results" style="width: 90%; margin: 0 auto; display: block;">
+                    <figcaption style="margin-top: 10px; font-size: 0.9em; color: #666;">
+                       Layerwise TDNV during training process. The phenomenon emerges and intensifies with training progress.
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
             </div>
-            <div class="column is-half">
-              <figure class="image">
-                <img src="static/images/mask-noise.png" alt="Task-Awareness Visualization">
-                <figcaption>Task-Awareness</figcaption>
-              </figure>
+          </div>
+          
+          <!-- Scaling Up Model Size Subsection -->
+          <div style="margin-top: 3rem;">
+            <h3 class="title is-4" style="color: #007bff; margin-bottom: 1.5rem;">Scaling Up Model Size Leads to More Compression</h3>
+            
+            <div class="columns is-centered">
+              <div class="column is-fullwidth">
+                <div class="content has-text-centered">
+                  <p style="margin-bottom: 1.5rem; font-size: 1.1em; color: #555;">
+                    Take Away: As model size increases, the phenomenon becomes more pronounced, with larger models achieving better task representation compression.
+                  </p>
+                  
+                  <div class="columns is-centered">
+                    <div class="column is-5">
+                      <figure class="image">
+                        <img src="static/images/cdnv_pythia_small.png" alt="Model Scaling Results 1" style="width: 90%; border-radius: 8px; margin: 0 auto; display: block;">
+                        <figcaption style="margin-top: 10px; font-size: 0.9em; color: #666;">
+                          Layerwise TDNV of varying model size.
+                        </figcaption>
+                      </figure>
+                    </div>
+                    <div class="column is-5">
+                      <figure class="image">
+                        <img src="static/images/pythia_mean_accuracy_cdnv.png" alt="Model Scaling Results 2" style="width: 90%; border-radius: 8px; margin: 0 auto; display: block;">
+                        <figcaption style="margin-top: 10px; font-size: 0.9em; color: #666;">
+                          ICL Performance v.s. minimum TDNV of varying model size.
+                        </figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Compression-to-Expansion under Noisy Demonstrations Subsection -->
+          <div style="margin-top: 3rem;">
+            <h3 class="title is-4" style="color: #007bff; margin-bottom: 1.5rem;">Compression-to-Expansion under Noisy Demonstrations</h3>
+            
+            <p style="font-size: 1.1em; color: #555; text-align: center; margin-bottom: 1.5rem;">
+              Take Away: As the noise ratio increases, TDNV rises, and once the within-task variance exceeds the between-task distance ($\text{TDNV} > 1$), ICL performance drops sharply.
+            </p>
+            
+            <div class="columns is-centered">
+              <div class="column is-fullwidth">
+                <div class="content has-text-centered">
+                  <div class="columns is-centered">
+                    <div class="column is-5">
+                      <figure class="image">
+                        <img src="static/images/acc_noise.png" alt="Noisy Demonstrations Results 1" style="width: 90%; border-radius: 8px; margin: 0 auto; display: block;">
+                        <figcaption style="margin-top: 10px; font-size: 0.9em; color: #666;">
+                          ICL Performance under different noise ratios.
+                        </figcaption>
+                      </figure>
+                    </div>
+                    <div class="column is-5">
+                      <figure class="image">
+                        <img src="static/images/cdnv_perturb.png" alt="Noisy Demonstrations Results 2" style="width: 90%; border-radius: 8px; margin: 0 auto; display: block;">
+                        <figcaption style="margin-top: 10px; font-size: 0.9em; color: #666;">
+                          Layerwise TDNV under different noise ratios.
+                        </figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -511,125 +477,17 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Image carousel -->
-<!-- <section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section> -->
-<!-- End image carousel -->
-
-
-
-
-
-
-
-<!-- Video carousel -->
-<!-- <section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-<!-- <section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section> -->
-<!--End paper poster -->
-
-
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>@misc{jiang2025cataircontenttaskawareallinone,
-        title={Cat-AIR: Content and Task-Aware All-in-One Image Restoration}, 
-        author={Jiachen Jiang and Tianyu Ding and Ke Zhang and Jinxin Zhou and Tianyi Chen and Ilya Zharkov and Zhihui Zhu and Luming Liang},
-        year={2025},
-        eprint={2505.17322},
-        archivePrefix={arXiv},
-        primaryClass={eess.IV},
-        url={https://arxiv.org/abs/2505.17322},
-  }</code></pre>
+      <pre><code>@article{jiang2025compression,
+        title={From Compression to Expansion: A Layerwise Analysis of In-Context Learning},
+        author={Jiang, Jiachen and Dong, Yuxin and Zhou, Jinxin and Zhu, Zhihui},
+        journal={arXiv preprint arXiv:2505.17322},
+        year={2025}
+      }
+  </code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
@@ -642,7 +500,7 @@
         <div class="content">
 
           <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
              <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
