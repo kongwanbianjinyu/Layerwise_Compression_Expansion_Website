@@ -351,7 +351,7 @@ $$\text{var}_t^{(l)} = \frac{1}{N} \sum_{i=1}^{N} \|h_{i,t}^{(l)} - \bar{h}_t^{(
               </div>
             </li>
             <li style="text-align: left;">
-              <b>Between-task distance($\|\bar{h}_t^{(l)} - \bar{h}_{t'}^{(l)}\|_2$).</b> It measures the separation between different tasks. A larger distance means better compression.
+              <b>Between-task distance($\|\bar{h}_t^{(l)} - \bar{h}_{t'}^{(l)}\|_2$).</b> It measures the separation between different tasks. A larger distance means better separation.
             </li>
           </ul>
         </div>
@@ -469,6 +469,73 @@ $$\text{var}_t^{(l)} = \frac{1}{N} \sum_{i=1}^{N} \|h_{i,t}^{(l)} - \bar{h}_t^{(
               </div>
             </div>
           </div>
+
+          <!-- Bias-variance Decomposition of Task Vectors Subsection -->
+          <div style="margin-top: 3rem;">
+            <h3 class="title is-4" style="color: #007bff; margin-bottom: 1.5rem;">Bias-variance Decomposition of Task Vectors</h3>
+            
+            <p style="font-size: 1.1em; color: #555; text-align: left; margin-bottom: 1.5rem;">
+              Take Away: As K increases, we observe an intriguing phenomenon:
+              <br>&nbsp;&nbsp;&nbsp;&nbsp;• Different tasks induce task vectors in distinct directions, yet each task follows a consistent direction.
+              <br>&nbsp;&nbsp;&nbsp;&nbsp;• The variance within each task decreases.
+              <br><br>
+              Thus, we decompose the task vector into bias and variance components:
+            </p>
+
+            <div class="equation-box">
+              $h_{t,i}(K) = \mu_t(\infty) + \underbrace{\mu_t(K) - \mu_t(\infty)}_{\text{bias}} + \underbrace{h_{t,i}(K) - \mu_t(K)}_{\text{variance}}$
+            </div>
+
+            <div class="columns is-centered">
+              <div class="column is-fullwidth">
+                <div class="content has-text-centered">
+                  <div class="columns is-centered">
+                    <div class="column is-6">
+                      <figure class="image">
+                        <img src="static/images/task_vector_pca_same_query_anno.png" alt="Task Vector PCA" style="width: 75%; border-radius: 8px; margin: 0 auto; display: block;">
+                        <figcaption style="margin-top: 10px; font-size: 0.9em; color: #666;">
+                          PCA visualization of task vectors from different tasks. As K increases, task vectors from different tasks become more separated while variance within each task decreases.
+                        </figcaption>
+                      </figure>
+                    </div>
+                    <div class="column is-4">
+                      <div style="margin-bottom: 2rem;">
+                        <figure class="image">
+                          <img src="static/images/distance_vs_icl_length.png" alt="Distance vs ICL Length" style="width: 70%; border-radius: 8px; margin: 0 auto; display: block;">
+                          <figcaption style="margin-top: 10px; font-size: 0.9em; color: #666;">
+                            Decrease of bias as $\mathcal{O}(1/K)$.
+                          </figcaption>
+                        </figure>
+                      </div>
+                      <div>
+                        <figure class="image">
+                          <img src="static/images/variance_vs_icl_length.png" alt="Variance vs ICL Length" style="width: 70%; border-radius: 8px; margin: 0 auto; display: block;">
+                          <figcaption style="margin-top: 10px; font-size: 0.9em; color: #666;">
+                            Decrease of variance as $\mathcal{O}(1/K)$.
+                          </figcaption>
+                        </figure>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <p style="font-size: 1.1em; color: #555; text-align: left; margin-bottom: 1rem;">
+              Decrease of bias:
+            </p>
+            <div class="equation-box">
+              $\|\mu_t(K) - \mu_t(\infty)\|_2 \propto \mathcal{O}(1/K)$
+            </div>
+            
+            <p style="font-size: 1.1em; color: #555; text-align: left; margin-bottom: 1rem;">
+              Decrease of variance:
+            </p>
+            <div class="equation-box">
+              $\|\mathbb{E}[(h_{t,i}(K) - \mu_t(K))^2]\|_2 \propto \mathcal{O}(1/K)$
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
